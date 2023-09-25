@@ -1,16 +1,9 @@
-// const url = "https://fakestoreapi.com/products";
-// const fetchProducts = async () => {
-//   try {
-//     const res = await fetch(url);
-//     return await res.json();
-//   } catch (error) {
-//     return error;
-//   }
-// };
-// console.log(fetchProducts());
+
 
 
 (async () => {
+    // for fetch data
+
     const productContainerEl = document.getElementById("productContainer");
     const searchInputEl = document.getElementById("searchInput");
   
@@ -23,8 +16,11 @@
         return error;
       }
     };
+    
     const products = await fetchProducts();
   
+//for genarate product and create product cart
+
     const generateProducts = (product) => {
       return `<div class="product_card">	
         <div class="image_container">	
@@ -45,6 +41,9 @@
       </div>`;
     };
   
+    //search the product and apply filter on title and price ,description
+
+
     const renderProducts = (products) => {
       productContainerEl.innerHTML = "";
       products.forEach((product) => {
